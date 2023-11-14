@@ -1,0 +1,84 @@
+.loader {
+  --dot: #dc3644;
+  --duration: 3s;
+  --path: #2e2e2e;
+  height: 44px;
+  position: relative;
+  width: 44px;
+}
+
+.loader:before {
+  animation: dotRect var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86)
+    infinite;
+  background: var(--dot);
+  border-radius: 50%;
+  content: '';
+  display: block;
+  height: 6px;
+  left: 19px;
+  position: absolute;
+  top: 37px;
+  transform: translate(-18px, -18px);
+  width: 6px;
+}
+
+.loader svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.loader svg polygon {
+  fill: none;
+  stroke: var(--path);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 10px;
+}
+
+.loader svg polygon {
+  animation: pathTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86)
+    infinite;
+  stroke-dasharray: 145 76 145 76;
+  stroke-dashoffset: 0;
+}
+
+.loader.triangle {
+  width: 48px;
+}
+
+.loader.triangle:before {
+  animation: dotTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86)
+    infinite;
+  left: 21px;
+  transform: translate(-10px, -18px);
+}
+
+@keyframes pathTriangle {
+  33% {
+    stroke-dashoffset: 74;
+  }
+  66% {
+    stroke-dashoffset: 147;
+  }
+  100% {
+    stroke-dashoffset: 221;
+  }
+}
+
+@keyframes dotTriangle {
+  33% {
+    transform: translate(0, 0);
+  }
+  66% {
+    transform: translate(10px, -18px);
+  }
+  100% {
+    transform: translate(-10px, -18px);
+  }
+}
+
+.loader {
+  display: inline-block;
+  margin: 0 16px;
+}

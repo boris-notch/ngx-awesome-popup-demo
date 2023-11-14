@@ -1,0 +1,13 @@
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+
+  .footer {
+    margin-top: auto;
+    padding: 0 30px 20px 0;
+    text-align: end;
+    width: 100%;
+  }
+}

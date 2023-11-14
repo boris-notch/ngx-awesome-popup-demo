@@ -1,0 +1,18 @@
+<p-fieldset
+  [style]="{ marginTop: '30px' }"
+  legend="Dialog - select products demo"
+>
+  <div class="button-wrapper">
+    <p-button (click)="fullScreen()" label="Full screen"></p-button>
+    <p-button
+      (click)="previewDialogCustomSize()"
+      label="Custom size"
+    ></p-button>
+    <p-button (click)="withLoader()" label="With loader"></p-button>
+    <p-button (click)="withFancyLoader()" label="With custom loader"></p-button>
+  </div>
+</p-fieldset>
+<div class="card" *ngIf="selectedProduct">
+  <pre>{{ selectedProduct | json }}</pre>
+</div>
+<!--<app-lorem-ipsum />-->

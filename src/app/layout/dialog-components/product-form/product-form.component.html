@@ -1,0 +1,52 @@
+<div class="form-wrapper">
+  <div class="card">
+    <h2>
+      {{ !!dialogBelonging.customData.id ? 'Edit' : 'Create new' }} product
+    </h2>
+    <div class="flex flex-wrap gap-3 mb-4">
+      <div class="flex-auto">
+        <label class="font-bold block mb-2"> Name </label>
+        <input
+          type="text"
+          pInputText
+          [(ngModel)]="dialogBelonging.customData.name"
+        />
+      </div>
+      <div class="flex-auto">
+        <label class="font-bold block mb-2"> Quantity </label>
+        <p-inputNumber [(ngModel)]="dialogBelonging.customData.quantity" />
+      </div>
+      <div class="flex-auto">
+        <label class="font-bold block mb-2"> Price </label>
+        <p-inputNumber [(ngModel)]="dialogBelonging.customData.price" />
+      </div>
+    </div>
+    <div class="flex flex-wrap gap-3">
+      <div class="flex-auto">
+        <label class="font-bold block mb-2"> Description </label>
+        <input
+          type="text"
+          style="width: 100%"
+          pInputText
+          [(ngModel)]="dialogBelonging.customData.description"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <button
+      class="p-button-primary mr-2"
+      pButton
+      pRipple
+      [label]="!!dialogBelonging.customData.id ? 'Save' : 'Create'"
+      (click)="submit()"
+    ></button>
+    <button
+      class="p-button-secondary mr-2"
+      pButton
+      pRipple
+      label="Cancel"
+      (click)="cancel()"
+    ></button>
+  </div>
+</div>
