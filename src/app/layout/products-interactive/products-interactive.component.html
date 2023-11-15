@@ -1,0 +1,66 @@
+<h4 class="table-title">Product list</h4>
+<p-toolbar styleClass="mb-4 gap-2">
+  <ng-template pTemplate="left">
+    <button
+      class="p-button-success mr-2"
+      pButton
+      pRipple
+      label="New product"
+      icon="pi pi-plus"
+      (click)="onNew()"
+    ></button>
+  </ng-template>
+</p-toolbar>
+<p-table
+  [value]="(products | async)!"
+  dataKey="id"
+  editMode="row"
+  [tableStyle]="{ 'min-width': '50rem' }"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th style="width: 20%">Name</th>
+      <th style="width: 20%">Description</th>
+      <th style="width: 20%">Price</th>
+      <th style="width: 20%">Quantity</th>
+      <th style="width: 20%"></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-product>
+    <tr>
+      <td>
+        {{ product.name }}
+      </td>
+      <td>
+        {{ product.description }}
+      </td>
+      <td>
+        {{ product.price | currency: 'EUR' }}
+      </td>
+
+      <td>
+        {{ product.quantity }}
+      </td>
+      <td>
+        <div class="flex align-items-center justify-content-center gap-2">
+          <button
+            class="p-button-rounded p-button-text"
+            type="button"
+            pButton
+            pRipple
+            icon="pi pi-pencil"
+            (click)="onEdit(product)"
+          ></button>
+          <button
+            class="p-button-rounded p-button-text p-button-danger"
+            type="button"
+            pButton
+            pRipple
+            icon="pi pi-trash"
+            (click)="onDelete(product)"
+          ></button>
+        </div>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
