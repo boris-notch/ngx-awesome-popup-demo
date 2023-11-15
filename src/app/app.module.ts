@@ -53,7 +53,7 @@ registerLocaleData(localeFr);
     ConfirmBoxConfigModule.forRoot(),
     ToastNotificationConfigModule.forRoot({
       globalSettings: {
-        allowedNotificationsAtOnce: 9, // The number of toast notifications that can be shown at once.
+        allowedNotificationsAtOnce: 5, // The number of toast notifications that can be shown at once.
       },
     }),
     MenubarModule,

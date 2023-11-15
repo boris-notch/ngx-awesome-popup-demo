@@ -23,8 +23,8 @@ export class ToastService {
     textPosition: 'center',
     progressBar: ToastProgressBarEnum.NONE, // INCREASE | DECREASE | NONE
     toastUserViewType: ToastUserViewTypeEnum.SIMPLE, // STANDARD | SIMPLE
-    animationIn: AppearanceAnimation.SLIDE_IN_LEFT, // BOUNCE_IN | SWING | ZOOM_IN | ZOOM_IN_ROTATE | ELASTIC | JELLO | FADE_IN | SLIDE_IN_UP | SLIDE_IN_DOWN | SLIDE_IN_LEFT | SLIDE_IN_RIGHT | NONE
-    animationOut: DisappearanceAnimation.SLIDE_OUT_RIGHT, // BOUNCE_OUT | ZOOM_OUT | ZOOM_OUT_WIND | ZOOM_OUT_ROTATE | FLIP_OUT | SLIDE_OUT_UP | SLIDE_OUT_DOWN | SLIDE_OUT_LEFT | SLIDE_OUT_RIGHT | NONE
+    animationIn: AppearanceAnimation.ZOOM_IN, // BOUNCE_IN | SWING | ZOOM_IN | ZOOM_IN_ROTATE | ELASTIC | JELLO | FADE_IN | SLIDE_IN_UP | SLIDE_IN_DOWN | SLIDE_IN_LEFT | SLIDE_IN_RIGHT | NONE
+    animationOut: DisappearanceAnimation.ZOOM_OUT, // BOUNCE_OUT | ZOOM_OUT | ZOOM_OUT_WIND | ZOOM_OUT_ROTATE | FLIP_OUT | SLIDE_OUT_UP | SLIDE_OUT_DOWN | SLIDE_OUT_LEFT | SLIDE_OUT_RIGHT | NONE
     toastPosition: ToastPositionEnum.TOP_RIGHT, // TOP_LEFT | TOP_CENTER | TOP_RIGHT | TOP_FULL_WIDTH | BOTTOM_LEFT | BOTTOM_CENTER | BOTTOM_RIGHT | BOTTOM_FULL_WIDTH
   };
 
@@ -143,6 +143,12 @@ export class ToastService {
     if (confirmLabel) {
       toast.setButtonLabels(confirmLabel, declineLabel);
     }
+    /*    toast.setButtons([
+				  new ButtonMaker('ok', 'ok', ButtonLayoutDisplay.PRIMARY),
+				  new ButtonMaker('fine', 'fine', ButtonLayoutDisplay.SECONDARY),
+				  new ButtonMaker('done', 'done', ButtonLayoutDisplay.SUCCESS),
+				  new ButtonMaker('clear', 'clear', ButtonLayoutDisplay.DARK),
+				]);*/
     return toast.openToastNotification$();
   }
 }

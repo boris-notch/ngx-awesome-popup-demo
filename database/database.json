@@ -33,7 +33,7 @@
       "name": "Smartwatch",
       "description": "Fitness tracking smartwatch with heart rate monitor",
       "price": 200,
-      "quantity": 64
+      "quantity": 65
     }
   ]
 }

@@ -38,6 +38,7 @@ import { ProductDetailsComponent } from '../product-details/product-details.comp
   styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent {
+  // loading items from API, closing loader when items are loaded
   products: Observable<IProduct[]> = new Product().fetchAllSelect$().pipe(
     switchMap((resp) =>
       defer(() => {

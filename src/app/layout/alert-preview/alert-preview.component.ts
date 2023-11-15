@@ -12,15 +12,11 @@ export class AlertPreviewComponent {
   message = 'Stay tuned for announcements!';
 
   success(): void {
-    this.alertBoxService
-      .success(this.title, this.message)
-      .subscribe((resp) => console.log(resp));
+    this.alertBoxService.success(this.title, this.message);
   }
 
   info(): void {
-    this.alertBoxService
-      .info(this.title, this.message)
-      .subscribe((resp) => console.log(resp));
+    this.alertBoxService.info(this.title, this.message);
   }
 
   warning(): void {
@@ -28,9 +24,7 @@ export class AlertPreviewComponent {
   }
 
   danger(): void {
-    this.alertBoxService
-      .danger(this.title, this.message)
-      .subscribe((resp) => console.log(resp));
+    this.alertBoxService.danger(this.title, this.message);
   }
 
   none(): void {

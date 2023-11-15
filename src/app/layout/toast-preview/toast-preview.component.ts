@@ -9,31 +9,32 @@ import { ToastService } from '../../utils/modals/toast.service';
 export class ToastPreviewComponent {
   toastService = inject(ToastService);
 
+  title = 'Header';
+  message = '<b>HTML</b> Message';
+
   success(): void {
-    this.toastService.success('Header', '<b>HTML</b> Message');
+    this.toastService.success(this.title, this.message);
   }
 
   info(): void {
-    this.toastService.info('Header', '<b>HTML</b> Message');
+    this.toastService.info(this.title, this.message);
   }
 
   warning(): void {
-    this.toastService.warning('Header', '<b>HTML</b> Message');
+    this.toastService.warning(this.title, this.message);
   }
 
   danger(): void {
-    this.toastService.danger('Header', '<b>HTML</b> Message');
+    this.toastService.danger(this.title, this.message);
   }
 
   none(): void {
-    this.toastService.none('Header', '<b>HTML</b> Message');
+    this.toastService
+      .none(this.title, this.message /*, 'Done', 'Cancel'*/)
+      .subscribe((resp) => console.log(resp));
   }
 
   renderInMyDiv(): void {
-    this.toastService.renderInIDWrapper(
-      'my-div',
-      'Header',
-      '<b>HTML</b> Message',
-    );
+    this.toastService.renderInIDWrapper('my-div', this.title, this.message);
   }
 }

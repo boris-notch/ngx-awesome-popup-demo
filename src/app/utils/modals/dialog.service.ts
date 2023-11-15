@@ -40,7 +40,7 @@ export class DialogService {
       animationIn: AppearanceAnimation.ZOOM_IN,
       animationOut: DisappearanceAnimation.ZOOM_OUT,
       minHeight: '700px',
-      minWidth: '700px',
+      minWidth: '800px',
       ...dialogConfig,
     });
   };
